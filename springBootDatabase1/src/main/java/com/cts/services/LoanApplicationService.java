@@ -1,0 +1,26 @@
+package com.cts.services;
+import java.util.*;
+
+import com.cts.entities.LoanApplication;
+public interface LoanApplicationService {
+	
+	//all the data details
+	public List<LoanApplication> getAllDetails();
+	
+	// get the data based on date
+	public List<LoanApplication> getDateBasedResult(Date date);
+	
+	//get data based on id
+	public LoanApplication getOnedetail(String id);
+	
+	//adding the details
+	public LoanApplication addDetails(LoanApplication val);
+	
+	//updating the details
+	public LoanApplication updatedetails(LoanApplication value); 
+	
+	
+		
+	
+
+}
