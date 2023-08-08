@@ -1,0 +1,27 @@
+.links {
+  display: inline-flex;
+  margin: auto;
+}
+
+span {
+  cursor: pointer;
+}
+
+
+span:hover {
+  color: rgb(244, 123, 53);
+}
+
+/* .nav-button {
+  margin: 0px 15px;
+  padding: 0px 35px 0px 35px;
+} */
+
+button{
+  margin: 0px 13px;
+}
+
+button:hover{
+  background-color:rgb(227, 227, 233);
+  color: black;
+}

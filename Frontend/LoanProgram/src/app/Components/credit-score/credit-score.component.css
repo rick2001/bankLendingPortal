@@ -1,0 +1,50 @@
+.container{
+    width: 70%;
+    margin: 10px auto;
+    font-size: 1.1em;
+}
+h1 {
+    text-align: center;
+    margin-top: 2%;
+    background-color: rgb(0, 0, 0);
+    padding: 1%;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    width: 100%;
+    border-radius: 30px;
+    color: whitesmoke;
+}
+
+.card {
+    padding: 10px 10px;
+    margin: 20px auto;
+    border-radius: 20px;
+    background-color: #090909;
+    text-align: center;
+}
+
+.field {
+    width: 90%;
+    margin-left: 3%;
+    height: auto;
+    color: black;
+}
+
+.text-center button {
+    margin: 2%;
+    display: inline-block;
+}
+
+form {
+    margin-top: 5%;
+}
+
+.form-container {
+    width: 90%;
+    display: inline-table;
+}
+
+.message {
+    text-align: center;
+    color: red;
+}

@@ -1,0 +1,127 @@
+<div class="container">
+    <h1>Update Details Based On Id</h1>
+    <div class="card">
+        <form [formGroup]="SearchForm" (ngSubmit)="search(SearchForm.value)">
+            <mat-form-field class="field">
+                <input type="number" matInput placeholder="Search Loan Application Id" formControlName="id" />
+                <button matSuffix mat-button>Search</button>
+            </mat-form-field>
+        </form>
+        <div *ngIf="flag">
+            <div *ngIf="loanApplicationObj.appStatus=='new_loan'">
+                <form [formGroup]="loanDetailsForm" (ngSubmit)="updateLoanAppication(loanDetailsForm.value)">
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>LoanappId:</td>
+                                <td>
+                                    <input matInput readonly formControlName="loanAppId" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CustId:</td>
+                                <td>
+                                    <input matInput readonly [value]="loanApplicationObj.custId" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>DOB:</td>
+                                <td>
+                                    <input matInput readonly [value]="loanApplicationObj.birthDate" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Loan Amount:</td>
+                                <td>
+                                    <input matInput readonly [value]="loanApplicationObj.loanAmt" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>No Of Years:</td>
+                                <td>
+                                    <input matInput readonly [value]="loanApplicationObj.noOfYears" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Purpose:</td>
+                                <td>
+                                    <input matInput readonly [value]="loanApplicationObj.purpose" />
+                                </td>
+                            </tr>
+                            <tr *ngIf="statusFlag">
+                                <td>App Status:</td>
+                                <td>
+                                    <mat-form-field class="field">
+                                        <mat-label>select status</mat-label>
+                                        <mat-select formControlName="appStatus">
+                                            <mat-option value="Accepted">
+                                                Accept
+                                            </mat-option>
+                                            <mat-option value="Rejected">
+                                                Reject
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Type Of Loan:</td>
+                                <td>
+                                    <input matInput [value]="loanApplicationObj.typeOfLoan" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Loan Date:</td>
+                                <td>
+                                    <input matInput [value]="loanApplicationObj.loanAppDate" />
+                                </td>
+                            </tr>
+
+                            <tr *ngIf="statusFlag">
+                                <td>Status:</td>
+                                <td>
+                                    <mat-form-field class="field">
+                                        <mat-label>select status</mat-label>
+                                        <mat-select formControlName="status">
+                                            <mat-option value="Sanctioned">
+                                                Sanctioned
+                                            </mat-option>
+                                            <mat-option value="Cancelled">
+                                                Cancelled
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </td>
+                            </tr>
+
+                            <!-- <tr>
+                                <td>Status:</td>
+                                <td>
+                                    <input matInput [value]="loanApplicationObj.status" />
+                                </td>
+                            </tr> -->
+
+                            <!-- <tr>
+                                <td>Basic Check:</td>
+                                <td>
+                                    <input matInput [value]="loanApplicationObj.CreditRisk.basicCheck" />
+                                </td>
+                            </tr> -->
+                            <br />
+                        </tbody>
+                    </table>
+                    <div class="text-center" *ngIf="!btnflag">
+                        <button type="submit" color="primary" mat-raised-button>Update</button>
+                    </div>
+                </form>
+                <div class="text-center" *ngIf="btnflag">
+                    <button (click)="doBasicCheck()" color="primary" mat-raised-button>Basic Check</button>
+                </div>
+                {{ loanDetailsForm.value|json}}
+            </div>
+        </div>
+        <p>{{message}}</p>
+    </div>
+</div>

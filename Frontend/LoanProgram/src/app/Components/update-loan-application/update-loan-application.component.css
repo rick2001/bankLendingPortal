@@ -1,0 +1,39 @@
+.container{
+    width: 70%;
+    margin: 4px auto;
+}
+
+.field {
+    width: 90%;
+    margin-left: 4%;
+    height: auto;
+    color: black;
+}
+
+.card {
+    border-radius: 20px;
+    width: 100%;
+    background-color: aliceblue;
+    border: none;
+}
+
+form {
+    margin-top: 1%;
+}
+
+.text-center button {
+    margin: 2%;
+    display: inline-block;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2%;
+    background-color: rgb(1 1 1);
+    color: whitesmoke;
+    padding: 1%;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    width: 100%;
+    border-radius: 30px;
+}

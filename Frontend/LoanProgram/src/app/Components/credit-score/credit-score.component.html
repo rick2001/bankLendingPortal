@@ -1,0 +1,47 @@
+<div class="container">
+    <h1>Add Credit Details</h1>
+    <div class="card">
+      <form [formGroup]="CreditRiskForm" (ngSubmit)="submitData(CreditRiskForm.value)">
+        <div class="form-container">
+          <div formGroupName="loanApplication">
+            <mat-form-field class="field">
+              <mat-label>Select LoanApp Id</mat-label>
+              <mat-select formControlName="loanAppId" >
+                <mat-option *ngFor="let app of loanApps" [value]="app.loanAppId">
+                    {{app.loanAppId}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <mat-form-field class="field">
+            <mat-label>Credit Score</mat-label>
+            <input type="text" matInput  formControlName="creditScore"/>
+          </mat-form-field>
+          <mat-form-field class="field">
+            <mat-label>EMI:</mat-label>
+            <input type="number" matInput  formControlName="emi"/>
+          </mat-form-field>
+          
+        </div>
+        {{CreditRiskForm.value|json}}
+        <div class="text-center">
+          <button
+            type="submit"
+            color="primary"
+            mat-raised-button
+           
+          >
+            Submit
+          </button>
+          <button
+            type="reset"
+            color="accent"
+            mat-raised-button
+          >
+            Reset
+          </button>
+        </div>
+        <!-- {{ MeetingForm.value | json }} -->
+      </form>
+    </div>
+  </div>
